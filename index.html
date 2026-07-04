@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>THuntCoin</title>
+
+<link rel="stylesheet" href="style.css">
+
+<!-- Monetag SDK -->
+<script src="//libtl.com/sdk.js"
+data-zone="11218283"
+data-sdk="show_11218283">
+</script>
+
+</head>
+
+<body>
+
+<!-- Splash Screen -->
+
+<div id="splash">
+
+<img src="logo.png" class="logo" alt="THuntCoin">
+
+<h1>THuntCoin</h1>
+
+<p>Play • Earn • Win</p>
+<br>
+Please Wait......</br>
+</div>
+
+<!-- Main App -->
+
+<div id="app" style="display:none;">
+
+<!-- ================= HOME ================= -->
+
+<section id="homePage" class="page active">
+
+<header>
+
+<img src="logo.png" class="headerLogo" alt="THuntCoin Logo">
+
+<div>
+
+<h2>THuntCoin</h2>
+
+<p>Play • Earn • Win</p>
+
+</div>
+
+</header>
+
+<!-- Balance -->
+
+<div class="card">
+
+<h3>⭐ Balance</h3>
+
+<h1 id="balance">0</h1>
+
+<p>
+📅 Today's Earnings
+<span id="dailyEarnings">0</span>⭐
+</p>
+
+</div>
+
+<!-- Daily Reward -->
+
+<div class="card">
+
+<h3>🎁 Daily Reward</h3>
+
+<p>Collect 10⭐ every day.</p>
+
+<button id="rewardBtn">
+Claim +10⭐
+</button>
+
+</div>
+
+
+
+<!-- Telegram Channel -->
+
+<div class="card">
+
+<h3>📢 Telegram Channel</h3>
+
+<p>Join our official Telegram channel for updates.</p>
+
+<a href="https://t.me/TokenHCoinNews" target="_blank">
+
+<button id="channelBtn">
+
+Join Channel
+
+</button>
+
+</a>
+
+</div>
+
+<!-- Support -->
+
+<div class="card">
+
+<h3>💬 Contact Support</h3>
+
+<p>Need help? Contact our support bot.</p>
+
+<a href="https://t.me/THCoinSupportbot" target="_blank">
+
+<button id="supportBtn">
+
+Contact Support
+
+</button>
+
+</a>
+
+</div>
+
+<!-- Referral -->
+
+<div class="card">
+
+<h3>👥 Invite Friends</h3>
+
+<p>Earn +10⭐ for every successful referral.</p>
+
+<a href="https://t.me/THuntCoinbot" target="_blank">
+
+<button id="inviteBtn">
+
+Invite Friends
+
+</button>
+
+</a>
+
+</section>
+
+
+<!-- ================= EARN PAGE ================= -->
+
+<section id="earnPage" class="page">
+
+<div class="card">
+
+<h2>📺 Earn Stars</h2>
+
+<p>Watch rewarded ads and earn 35⭐ per completed ad.</p>
+
+</div>
+
+<div class="card">
+
+<h3>📊 Today's Ads</h3>
+
+<h1><span id="adsCount">0</span>/15</h1>
+
+<p>You can watch a maximum of 15 rewarded ads every day.</p>
+
+</div>
+
+<div class="card">
+
+<h3>🎁 Rewarded Interstitial</h3>
+
+<p>Reward: <b>35⭐</b></p>
+
+<button id="ad1Btn">
+
+📺 Watch Rewarded Ad
+
+</button>
+
+</div>
+
+<div class="card">
+
+<h3>🔥 Rewarded Popup</h3>
+
+<p>Reward: <b>35⭐</b></p>
+
+<button id="ad2Btn">
+
+🎁 Watch Rewarded Popup
+
+</button>
+
+</div>
+
+<div class="card">
+
+<h3>⭐ Bonus Reward</h3>
+
+<p>Reward: <b>35⭐</b></p>
+
+<button id="ad3Btn">
+
+🎉 Watch Bonus Ad
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ================= HUNT PAGE ================= -->
+
+<section id="huntPage" class="page">
+
+<div class="card">
+
+<h2>🎮 Token Hunt</h2>
+
+<p>Tap the gift boxes and collect Stars!</p>
+
+</div>
+
+<div class="huntGrid">
+
+<button class="huntTile">🎁</button>
+<button class="huntTile">🎁</button>
+<button class="huntTile">🎁</button>
+
+<button class="huntTile">🎁</button>
+<button class="huntTile">🎁</button>
+<button class="huntTile">🎁</button>
+
+<button class="huntTile">🎁</button>
+<button class="huntTile">🎁</button>
+<button class="huntTile">🎁</button>
+
+</div>
+
+<div class="card">
+
+<h3>Total Won</h3>
+
+<h1 id="huntReward">0⭐</h1>
+
+<button id="playAgainBtn">
+
+🔄 Play Again
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ================= WITHDRAW PAGE ================= -->
+
+<section id="withdrawPage" class="page">
+
+<div class="card">
+
+<h2>💸 Withdraw</h2>
+
+<p>Withdraw your earned TH Stars.</p>
+
+</div>
+
+<div class="card">
+
+<h3>⭐ Available Balance</h3>
+
+<h1 id="withdrawBalance">0⭐</h1>
+
+</div>
+
+<div class="card">
+
+<h3>💰 Withdrawal Amount</h3>
+
+<input
+type="number"
+id="withdrawAmount"
+placeholder="Enter amount">
+
+<p>Minimum Withdrawal: <b>5000⭐</b></p>
+
+</div>
+
+<div class="card">
+
+<h3>🏦 TON Wallet Address</h3>
+
+<input
+type="text"
+id="walletAddress"
+placeholder="Enter your TON wallet address">
+
+</div>
+
+<div class="card">
+
+<button id="withdrawBtn">
+
+💸 Submit Withdrawal
+
+</button>
+
+</div>
+
+<div class="card">
+
+<h3>📜 Withdrawal History</h3>
+
+<div id="withdrawHistory">
+
+No withdrawals yet.
+
+</div>
+
+</div>
+
+</section>
+
+
+</div>
+
+</section>
+<!-- ================= PROFILE PAGE ================= -->
+
+<section id="profilePage" class="page">
+
+<div class="card">
+
+<h2>👤 My Profile</h2>
+
+<p>Your THuntCoin account information.</p>
+
+</div>
+
+<div class="card">
+
+<h3>👤 Telegram Name</h3>
+
+<p id="profileName">Telegram User</p>
+
+</div>
+
+<div class="card">
+
+<h3>📛 Telegram Username</h3>
+
+<p id="profileUsername">@username</p>
+
+</div>
+
+<div class="card">
+
+<h3>🆔 Telegram ID</h3>
+
+<p id="profileId">Telegram ID</p>
+
+</div>
+
+<div class="card">
+
+<h3>⭐ Current Balance</h3>
+
+<p id="profileBalance">0⭐</p>
+
+</div>
+
+<div class="card">
+
+<h3>📺 Ads Watched</h3>
+
+<p id="profileAds">0</p>
+
+</div>
+
+<div class="card">
+
+<h3>🎮 Hunt Games Played</h3>
+
+<p id="profileGames">0</p>
+
+</div>
+
+<div class="card">
+
+<h3>💸 Total Withdrawn</h3>
+
+<p id="profileWithdrawn">0⭐</p>
+
+</div>
+
+<div class="card">
+
+<h3>📱 Platform</h3>
+
+<p>Telegram Mini App</p>
+
+</div>
+
+<div class="card">
+
+<h3>ℹ️ App Version</h3>
+
+<p>THuntCoin v1.0</p>
+
+</div>
+
+</section>
+
+<nav class="bottomNav">
+
+<button id="homeNav">🏠<br>Home</button>
+
+<button id="earnNav">💰<br>Earn</button>
+
+<button id="huntNav">🎮<br>Hunt</button>
+
+<button id="withdrawNav">💸<br>Withdraw</button>
+
+<button id="profileNav">👤<br>Profile</button>
+
+</nav>
+<script src="script.js"></script>
+</body>
+
+  </html>
