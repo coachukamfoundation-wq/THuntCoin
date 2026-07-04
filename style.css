@@ -1,0 +1,588 @@
+/* ===================================
+   THuntCoin v3.0
+=================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#0b0b0b;
+    color:#ffffff;
+    overflow-x:hidden;
+}
+
+/* ================= Splash Screen ================= */
+
+#splash{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    background:#000;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    z-index:9999;
+}
+
+.logo{
+    width:170px;
+    height:170px;
+    object-fit:contain;
+    animation:spin 2s linear infinite;
+}
+
+@keyframes spin{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+#splash h1{
+    color:#FFD700;
+    font-size:40px;
+    margin-top:20px;
+    font-weight:bold;
+}
+
+#splash p{
+    color:#cfcfcf;
+    margin-top:8px;
+    font-size:18px;
+}
+
+/* ================= Main App ================= */
+
+#app{
+    display:none;
+    max-width:600px;
+    margin:auto;
+    padding:20px;
+    padding-bottom:100px;
+}
+
+/* ================= Pages ================= */
+
+.page{
+    display:block;
+}
+
+/* ================= Header ================= */
+
+header{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:20px;
+}
+
+.headerLogo{
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    border:2px solid #FFD700;
+    object-fit:cover;
+    box-shadow:0 0 12px rgba(255,215,0,.5);
+}
+
+header h2{
+    color:#FFD700;
+    font-size:28px;
+}
+
+header p{
+    color:#bbbbbb;
+    font-size:15px;
+}
+
+/* ================= Cards ================= */
+
+.card{
+    background:#181818;
+    border:1px solid #FFD700;
+    border-radius:18px;
+    padding:18px;
+    margin-bottom:18px;
+    box-shadow:0 0 15px rgba(255,215,0,.15);
+}
+
+.card h3{
+    color:#FFD700;
+    margin-bottom:12px;
+    font-size:22px;
+}
+
+.card h1{
+    color:#FFD700;
+    font-size:46px;
+    margin:12px 0;
+}
+
+.card p{
+    color:#dddddd;
+    line-height:1.7;
+    font-size:15px;
+}
+
+/* ================= Balance ================= */
+
+#balance{
+    font-weight:bold;
+}
+
+#dailyEarnings{
+    color:#FFD700;
+    font-weight:bold;
+}
+
+/* ================= Buttons ================= */
+
+button{
+    width:100%;
+    padding:15px;
+    margin-top:12px;
+    border:none;
+    border-radius:12px;
+    background:#FFD700;
+    color:#000;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.25s;
+}
+
+button:hover{
+    background:#ffeb5a;
+}
+
+button:active{
+    transform:scale(.96);
+}
+
+/* Ad Buttons */
+
+#ad1Btn{
+    background:#FFD700;
+}
+
+#ad2Btn{
+    background:#ffc107;
+}
+
+#ad3Btn{
+    background:#ff9800;
+    color:#fff;
+}
+
+#ad1Btn:hover,
+#ad2Btn:hover,
+#ad3Btn:hover{
+    opacity:.9;
+}
+
+/* Links */
+
+a{
+    text-decoration:none;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+    width:6px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#FFD700;
+    border-radius:10px;
+}
+
+/* ================= Mobile ================= */
+
+@media(max-width:600px){
+
+    #app{
+        padding:15px;
+        padding-bottom:90px;
+    }
+
+    .logo{
+        width:150px;
+        height:150px;
+    }
+
+    .headerLogo{
+        width:55px;
+        height:55px;
+    }
+
+    header h2{
+        font-size:24px;
+    }
+
+    .card{
+        padding:16px;
+    }
+
+    .card h3{
+        font-size:20px;
+    }
+
+    .card h1{
+        font-size:38px;
+    }
+
+    button{
+        font-size:15px;
+        padding:14px;
+    }
+
+}
+
+/* ===========================
+   EARN PAGE
+=========================== */
+
+#earnPage .card h2{
+    color:#FFD700;
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+#earnPage .card h3{
+    color:#FFD700;
+    margin-bottom:10px;
+}
+
+#earnPage #adsCount{
+    color:#FFD700;
+    font-weight:bold;
+}
+
+#ad1Btn{
+    background:#FFD700;
+    color:#000;
+}
+
+#ad2Btn{
+    background:#ff9800;
+    color:#fff;
+}
+
+#ad3Btn{
+    background:#00c853;
+    color:#fff;
+}
+
+#ad1Btn:hover,
+#ad2Btn:hover,
+#ad3Btn:hover{
+    opacity:.9;
+}
+/* ===========================
+   Bottom Navigation
+=========================== */
+
+body{
+    background:#0b0b0b;
+    color:#fff;
+    margin:0;
+    padding:0;
+    font-family:Arial, Helvetica, sans-serif;
+
+    /* Prevent content from hiding behind bottom nav */
+    padding-bottom:75px;
+}
+
+.bottomNav{
+    position:fixed;
+    left:0;
+    bottom:0;
+    width:100%;
+    height:65px;
+    background:#111;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    border-top:2px solid gold;
+    box-shadow:0 -3px 12px rgba(0,0,0,.5);
+    z-index:9999;
+}
+
+.bottomNav button{
+    flex:1;
+    height:100%;
+    border:none;
+    outline:none;
+    background:transparent;
+    color:#ffffff;
+    font-size:12px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.bottomNav button:hover{
+    color:gold;
+    background:#222;
+}
+
+.bottomNav button:active{
+    background:#333;
+}
+
+.bottomNav button br{
+    margin-bottom:2px;
+}
+/* ===========================
+   TOKEN HUNT
+=========================== */
+
+.huntGrid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:15px;
+
+    margin:20px 0;
+
+}
+
+.huntTile{
+
+    height:90px;
+
+    font-size:40px;
+
+    background:#1b1b1b;
+
+    border:2px solid #FFD700;
+
+    border-radius:15px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.huntTile:hover{
+
+    transform:scale(1.05);
+
+}
+
+.huntTile:disabled{
+
+    opacity:.8;
+
+    cursor:not-allowed;
+
+}
+
+#huntReward{
+
+    color:#FFD700;
+
+    text-align:center;
+
+    font-size:42px;
+
+    margin:15px 0;
+
+}
+
+#playAgainBtn{
+
+    background:#FFD700;
+
+    color:#000;
+
+}
+
+#playAgainBtn:hover{
+
+    background:#ffea55;
+
+}
+
+/* ===========================
+   WITHDRAW PAGE
+=========================== */
+
+#withdrawPage input{
+
+    width:100%;
+
+    padding:15px;
+
+    margin-top:10px;
+
+    border:2px solid #FFD700;
+
+    border-radius:12px;
+
+    background:#111;
+
+    color:#fff;
+
+    font-size:16px;
+
+    outline:none;
+
+    box-sizing:border-box;
+
+}
+
+#withdrawPage input::placeholder{
+
+    color:#999;
+
+}
+
+#withdrawBtn{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#00c853;
+
+    color:#fff;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+#withdrawBtn:hover{
+
+    background:#00e676;
+
+}
+
+#withdrawBalance{
+
+    color:#FFD700;
+
+    font-size:42px;
+
+    text-align:center;
+
+}
+
+#withdrawHistory{
+
+    color:#ddd;
+
+    text-align:center;
+
+    padding:10px;
+
+    font-size:15px;
+
+}
+
+/* ===========================
+   PROFILE PAGE
+=========================== */
+
+#profilePage .card{
+
+    margin-bottom:15px;
+
+}
+
+#profilePage h2{
+
+    text-align:center;
+
+    color:#FFD700;
+
+    margin-bottom:10px;
+
+}
+
+#profilePage h3{
+
+    color:#FFD700;
+
+    font-size:17px;
+
+    margin-bottom:8px;
+
+}
+
+#profilePage p{
+
+    color:#fff;
+
+    font-size:16px;
+
+    word-break:break-word;
+
+}
+
+#profileName,
+#profileUsername,
+#profileId,
+#profileBalance,
+#profileAds,
+#profileGames,
+#profileWithdrawn{
+
+    font-size:18px;
+
+    font-weight:bold;
+
+}
+
+#profileBalance{
+
+    color:#FFD700;
+
+    font-size:36px;
+
+    text-align:center;
+
+    margin:10px 0;
+
+}
+
+#profilePage .card:hover{
+
+    transform:translateY(-2px);
+
+    transition:.3s;
+
+}
+
+#profilePage{
+
+    padding-bottom:90px;
+
+}
